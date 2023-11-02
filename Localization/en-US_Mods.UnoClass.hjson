@@ -1,0 +1,146 @@
+# This file will automatically update with entries for new content after a build and reload
+
+CommonItemTooltip: {
+	IncreasesMaxExampleResourceBy: Increases maximum example resource by {0}
+	# It is recommended to make some common tooltips for custom damage classes
+	# You can use them by referencing {$CommonItemTooltip.PercentIncreasedExampleDamage}
+	# Other mods can use them by referencing {$ExampleMod.CommonItemTooltip.PercentIncreasedExampleDamage}
+	PercentIncreasedUnoDamage: "{0}% increased uno damage."
+	PercentIncreasedRegenerationRate: "{0}% increased uno regeneration"
+	PercentIncreasedPickupRange: "{0}% increased uno pickup range"
+	PercentIncreasedImpactRange: "{0}% increased uno impact range"
+	ExtraCardSlot: "{0} extra uno card slot."
+	ExtraCardSlots: "{0} extra uno card slots."
+	ReshuffleSpeed: "{0}% increased uno shuffle speed."
+	UnoRange: increases uno range by {0} blocks.
+}
+
+Items: {
+	Card: {
+		DisplayName: Card
+		Tooltip: ""
+	}
+
+	ExampleStatBonusAccessory: {
+		DisplayName: Example Stat Bonus Accessory
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedUnoDamage@0}
+			{$CommonItemTooltip.ExtraCardSlot@1}
+			'''
+	}
+
+	BaseDeck: {
+		DisplayName: Base Deck
+		Tooltip: ""
+	}
+
+	WoodenDeck: {
+		DisplayName: Wooden Deck
+		Tooltip: "'Bamboo sticks out of it.'"
+	}
+
+	LivingDeck: {
+		DisplayName: Tree Deck
+		Tooltip: Gets stronger for every acorn in your inventory.
+	}
+
+	FrozenDeck: {
+		DisplayName: Frozeck
+		Tooltip: ""
+	}
+
+	BloodyDeck: {
+		DisplayName: Bloody Pack
+		Tooltip: `innit?`
+	}
+
+	GemstoneDeck: {
+		DisplayName: Gemcase
+		Tooltip: `Clear and shiny.`
+	}
+
+	FrozenGel: {
+		DisplayName: Frozen Gel
+		Tooltip: "'Terrible texture.'"
+	}
+
+	PurpleHandWarmer: {
+		DisplayName: Purple Hand Warmer
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedRegenerationRate@0}
+			{$CommonItemTooltip.PercentIncreasedImpactRange@1}
+			`very predominant smell.`
+			'''
+	}
+
+	RedHandWarmer: {
+		DisplayName: Red Hand Warmer
+		Tooltip:
+			'''
+			{$CommonItemTooltip.PercentIncreasedRegenerationRate@0}
+			{$CommonItemTooltip.PercentIncreasedImpactRange@1}
+			`won't help with the flesh.`
+			'''
+	}
+}
+
+UI: {
+	ExampleResource: Mods.UnoClass.UI.ExampleResource
+	DeckWheelUI: Mods.UnoClass.UI.DeckWheelUI
+}
+
+Projectiles: {
+	CardProjectile.DisplayName: Uno Card
+	GemBlitz.DisplayName: Gem Blitz
+}
+
+DamageClasses.UnoDamageClass.DisplayName: uno damage
+
+Prefixes: {
+	DamageTooltip: Mods.UnoClass.Prefixes.DamageTooltip
+
+	ExampleDerivedPrefix: {
+		AdditionalTooltip: Mods.UnoClass.Prefixes.ExampleDerivedPrefix.AdditionalTooltip
+		DisplayName: Example Derived Prefix
+	}
+
+	MessyPrefix: {
+		AdditionalTooltip: Mods.UnoClass.Prefixes.MessyPrefix.AdditionalTooltip
+		DisplayName: Messy Prefix
+	}
+
+	Messy.DisplayName: Messy
+
+	DeckPrefix: {
+		AdditionalTooltip: Mods.UnoClass.Prefixes.DeckPrefix.AdditionalTooltip
+		DisplayName: Deck Prefix
+	}
+
+	Bluffing.DisplayName: Bluffing
+	Prefixes.Common.DeckRegeneration.DisplayName: "{0} Deck Regeneration"
+
+	Common: {
+		PickupRange: "{0}% deck pickup range"
+		DeckRegeneration: "{0}% card regeneration rate"
+	}
+
+	Shuffled.DisplayName: Shuffled
+	Organic.DisplayName: Organic
+	Folded.DisplayName: Folded
+	Flat.DisplayName: Flat
+	Big.DisplayName: Big
+	Shoddy.DisplayName: Shoddy
+}
+
+Mods: {
+	UnoClass: {
+		Prefixes: {
+			Common: {
+				PickupRange: "{0}% deck pickup range"
+				DeckRegeneration: "{0}% card regeneration rate"
+			}
+		}
+	}
+}
