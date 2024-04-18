@@ -51,7 +51,7 @@ namespace UnoClass.Content.Projectiles {
             Projectile.tileCollide = false; // Can the projectile collide with tiles
             Projectile.penetrate = 5;
             Projectile.knockBack = 7f;
-            Projectile.damage = 60;
+            Projectile.damage = 30;
             Projectile.timeLeft = 200;
             player = Main.player[Projectile.owner];
             entityIDIgnore = new List<int>() { };

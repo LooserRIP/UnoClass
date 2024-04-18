@@ -18,6 +18,7 @@ using UnoClass.Content.Projectiles;
 using UnoClass.Networking;
 using UnoClass;
 using UnoClass.Common.GlobalItems;
+using Terraria.Chat;
 
 namespace UnoClass.Common.Players
 {
@@ -47,6 +48,7 @@ namespace UnoClass.Common.Players
         private int SkippedCards;
 
         //stat variables
+        public bool SkipCardKnockback;
 
 		public override void PreUpdate() {
             UpdateLerp();
@@ -90,6 +92,7 @@ namespace UnoClass.Common.Players
             RegenerationMult = 1;
             RegenerationSpeed = 1;
             ImpactRangeMult = 1;
+
             GlobalDecks deckItem;
             if (UnoSystem.GetDeckGlobal(Player.HeldItem, out deckItem)) {
                 AccessRange = deckItem.deckRange;
@@ -98,6 +101,8 @@ namespace UnoClass.Common.Players
                 RegenerationMult += ((deckItem.deckRegenerationMultiplier - 1));
             }
             CardSlots = Math.Max(1, Math.Min(10, CardSlots)); //clamp it where it's needed
+
+            SkipCardKnockback = false;
         }
 
         public float scaleLerp = 0;
@@ -174,7 +179,7 @@ namespace UnoClass.Common.Players
                     if (Main.rand.Next(0, 20) == 0) special = 1;
                     break;
                 case 4: //Gemstone Deck, give gem blitz card (special id 2)
-                    if (Main.rand.Next(0, 3) == 0) special = 2;
+                    if (Main.rand.Next(0, 20) == 0) special = 2;
                     break;
 
             }
@@ -263,9 +268,14 @@ namespace UnoClass.Common.Players
                 Deck[newIndex] = new UnoCard(true, 0, 0);
                 EmptyCards++;
                 LookForNewIndex();
+                if (SkipCardKnockback) SkipCardKnockbackActivate();
                 return true;
             }
             return true;
+        }
+
+        public void SkipCardKnockbackActivate() {
+            Main.NewText("I didn't code functionality for this fuckkkk");
         }
 
         public int GetIndex(int ind) {

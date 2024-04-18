@@ -84,6 +84,11 @@ Items: {
 			`won't help with the flesh.`
 			'''
 	}
+
+	SkeletonScarf: {
+		DisplayName: Skeleton Scarf
+		Tooltip: Knocks close enemies back when skipping a card.
+	}
 }
 
 UI: {
